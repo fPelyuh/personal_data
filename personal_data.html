@@ -53,7 +53,7 @@
             display: none;
         }
 
-        .visible {
+        .visible, .Mvisible {
             display: block;
         }
 
@@ -119,7 +119,7 @@
             margin-bottom: 24px;
         }
 
-        .choice {
+        .choice, .Mchoice {
             background-color: #eaf5ff !important; 
         }
 
@@ -164,8 +164,8 @@
     </style>
     <script>
         function hideBlock(button) {
-            const bot = button.getAttribute('id')
-            const block = document.querySelector('.'+bot);
+            const buttonId = button.getAttribute('id')
+            const block = document.querySelector('.'+buttonId);
 
             document.querySelectorAll('.choice').forEach(item => item.classList.remove('choice'));
             button.classList.add('choice');
@@ -175,14 +175,14 @@
         }
 
         function hideBlockMobile(button) {
-            const bot = button.getAttribute('id')
-            const block = document.querySelector('.'+bot);
+            const buttonId = button.getAttribute('id')
+            const block = document.querySelector('.'+buttonId);
 
-            document.querySelectorAll('.choice').forEach(item => item.classList.remove('choice'));
-            button.classList.add('choice');
+            document.querySelectorAll('.Mchoice').forEach(item => item.classList.remove('Mchoice'));
+            button.classList.add('Mchoice');
 
-            document.querySelectorAll('.visible').forEach(item => item.classList.remove('visible'));
-            block.classList.toggle('visible');
+            document.querySelectorAll('.Mvisible').forEach(item => item.classList.remove('Mvisible'));
+            block.classList.toggle('Mvisible');
         }
     </script>
 </head>
@@ -387,8 +387,8 @@
         </div>
     </div>
     <div class="mobile">
-        <button onclick="hideBlockMobile(this)" id="generalMobile" class="choice"><img src="img/general_icon.svg" width="44" height="44"><p>1. Общие положения</p></button>
-        <div class="visible generalMobile" name="">
+        <button onclick="hideBlockMobile(this)" id="generalMobile" class="Mchoice"><img src="img/general_icon.svg" width="44" height="44"><p>1. Общие положения</p></button>
+        <div class="Mvisible generalMobile" name="">
             <p>ООО &laquo;Хэдхантер&raquo; (ИНН 7718620740, адрес: 129085, г.Москва, ул.Годовикова, д.9, стр.10) 
                 (далее&nbsp;&mdash; &laquo;Компания&raquo;) в&nbsp;рамках выполнения своей основной деятельности 
                 осуществляет обработку персональных данных различных категорий субъектов персональных данных 
